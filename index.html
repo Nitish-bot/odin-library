@@ -12,15 +12,30 @@
         <button id="login">Log in</button>
     </header>
     <main>
-        <dialog id="dialog" open>
+        <div id="addDiv"><button id="add" onclick="openForm()">Add Book</button></div>
+        <dialog id="dialog">
             <form>
                 Namastute
                 <button id="cancelAdd" onclick="closeForm()">Cross</button>
                 <button id="added" onclick="submit">Add</button>
             </form>
         </dialog>
-        <div><button id="add" onclick="openForm()">Add Book</button></div>
-        <div id="cardHolder"></div>
+        <div id="cardHolder">
+            <div class="card">
+                <p class="name">The Hobbit</p>
+                <p class="author">GRR Martin</p>
+                <p class="pageCount">176 Pages</p>
+                <button class="readStatus">Read</button>
+                <button id="removeBook">Remove</button>
+            </div>
+            <div class="card">
+                <p class="name">The Hobbit</p>
+                <p class="author">GRR Martin</p>
+                <p class="pageCount">176 Pages</p>
+                <button class="readStatus">Read</button>
+                <button id="removeBook">Remove</button>
+            </div>
+        </div>
     </main>
     <script src="./script.js"></script>
 </body>

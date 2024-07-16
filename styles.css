@@ -52,3 +52,16 @@ header button {
     flex-direction: column;
     gap: 12px;
 }
+
+.readStatus, .removeBook {
+    height: 32px;
+}
+
+footer {
+    margin-top: 32px;
+    height: 64px;
+    background-color: rgb(146, 255, 146);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

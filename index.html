@@ -12,7 +12,14 @@
         <button id="login">Log in</button>
     </head>
     <main>
-        <div><button id="add" onclick="submit">Add Book</button></div>
+        <dialog id="dialog" open>
+            <form>
+                Namastute
+                <button id="cancelAdd" onclick="closeForm()">Cross</button>
+                <button id="added" onclick="submit">Add</button>
+            </form>
+        </dialog>
+        <div><button id="add" onclick="openForm()">Add Book</button></div>
         <div id="cardHolder"></div>
     </main>
     <script src="./script.js"></script>

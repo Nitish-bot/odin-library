@@ -13,11 +13,25 @@
     </header>
     <main>
         <div id="addDiv"><button id="add" onclick="openForm()">Add Book</button></div>
-        <dialog id="dialog">
+        <dialog id="dialog" open>
             <form>
-                Namastute
-                <button id="cancelAdd" onclick="closeForm()">Cross</button>
-                <button id="added" onclick="submit">Add</button>
+                <div class="formDiv">
+                    <label for="ftitle">Title: </label>
+                    <input type="text" id="ftitle" name="ftitle">
+                </div>
+                <div class="formDiv">
+                    <label for="fauthor">Author: </label>
+                    <input type="text" id="fauthor" name="fauthor">
+                </div>
+                <div class="formDiv">
+                    <label for="fcount">Pages: </label>
+                    <input type="text" id="fcount" name="fcount">
+                </div>
+                <button id="freadStatus" class="read">Read</button>
+                <div class="formDiv">
+                    <button id="cancelAdd" onclick="closeForm()">X</button>
+                    <button id="added" onclick="submit">Add</button>
+                </div>
             </form>
         </dialog>
         <div id="cardHolder">

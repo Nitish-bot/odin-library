@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     
+    // Constructor lib and add function declarations
     const lib = [];
 
     function book(author, title, pageCount, readStatus) {
@@ -14,10 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
         lib.push(newBook);
     }
 
+    // Sample additions
     addBook("GRR", "TKOR", "176", "read");
     addBook("GRs", "KOR", "276", "unread");
-
-    console.log(lib);
+    // 
 
     const dialog = document.getElementById('dialog'); 
     function openForm() {
@@ -38,6 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
             closeForm();
         });
 
+
+        // Handle read status toggle and add book
         const readStat = document.getElementById('freadStatus');
         const added = document.getElementById('added');
 
@@ -58,7 +61,17 @@ document.addEventListener("DOMContentLoaded", () => {
             const fAuthor = document.getElementById('fauthor').value;
             const fTitle = document.getElementById('ftitle').value;
             const fPages = document.getElementById('fcount').value;
-            const fReadStat = document.getElementById('freadStatus').class;
+            const fReadStat = document.getElementById('freadStatus').className;
+
+            if (isNaN(fReadStat) || fAuthor === "" || fTitle === "" ||
+                fPages === "") {
+                alert('Please fill the details in the correct format!');
+            }
+            else {
+                addBook(fAuthor, fTitle, fPages, fReadStat);
+            }
+
+            fAuthor = "";
         });
     });
 });

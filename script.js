@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Constructor lib and add function declarations
     const lib = [];
 
-    function book(author, title, pageCount, readStatus) {
+    function createBook(author, title, pageCount, readStatus) {
         this.author = author,
         this.title = title,
         this.pageCount = pageCount,
@@ -11,8 +11,43 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     function addBook(author, title, pageCount, readStatus) {
-        let newBook = new book(author, title, pageCount, readStatus);
+        let newBook = new createBook(author, title, pageCount, readStatus);
         lib.push(newBook);
+    }
+
+    // Declare function for reading from the lib and display
+    function display(book) {
+        const cardHolder = document.getElementById('cardHolder')
+        const card = document.createElement('p');
+        p.className = 'card';
+
+        const name = document.createElement('p');
+        name.className = 'name';
+        name.innerHTML = `Title: ${book.title}`;
+
+        const author = document.createElement('p');
+        author.className = 'author';
+        author.innerHTML = `Author: ${book.author}`;
+
+        const pageCount = document.createElement('p');
+        pageCount.className = 'pageCount';
+        author.innerHTML = `${book.pageCount} pages`;
+
+        const readStat = document.createElement('button');
+        readStat.className = `readStatus ${book.readStatus}`;
+        readStat.innerHTML = book.readStatus === 'read' ? 'Read' : 'Unread';
+
+        const remove = document.createElement('button');
+        remove.className = 'removeBook';
+        remove.innerHTML = `Remove`;
+
+        card.appendChild(name);
+        card.appendChild(author);
+        card.appendChild(pageCount);
+        card.appendChild(readStat);
+        card.appendChild(remove);
+
+        cardHolder.appendChild(card);
     }
 
     // Sample additions
@@ -40,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-        // Handle read status toggle and add book
+        // Handle read status toggle and add Book
         const readStat = document.getElementById('freadStatus');
         const added = document.getElementById('added');
 
@@ -70,8 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
             else {
                 addBook(fAuthor, fTitle, fPages, fReadStat);
             }
-
-            fAuthor = "";
         });
     });
 });

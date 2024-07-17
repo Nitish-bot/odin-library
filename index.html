@@ -12,8 +12,8 @@
         <button id="login">Log in</button>
     </header>
     <main>
-        <div id="addDiv"><button id="add" onclick="openForm()">Add Book</button></div>
-        <dialog id="dialog" open>
+        <div id="addDiv"><button id="add" onclick="submit">Add Book</button></div>
+        <dialog id="dialog">
             <form>
                 <div class="formDiv">
                     <label for="ftitle">Title: </label>
@@ -29,7 +29,7 @@
                 </div>
                 <button id="freadStatus" class="read">Read</button>
                 <div class="formDiv">
-                    <button id="cancelAdd" onclick="closeForm()">X</button>
+                    <button id="cancelAdd" onclick="submit">X</button>
                     <button id="added" onclick="submit">Add</button>
                 </div>
             </form>
@@ -39,7 +39,7 @@
                 <p class="name">Title: <span>The Hobbit</span></p>
                 <p class="author">Author: <span>GRR Martin</span></p>
                 <p class="pageCount">Pages: <span>176 Pages</span></p>
-                <button class="readStatus">Read</button>
+                <button class="readStatus read">Read</button>
                 <button class="removeBook">Remove</button>
             </div>
             <div class="card">
@@ -89,6 +89,6 @@
     <footer>
         <p>By Nitish Choudhary as part of The Odin Project</p>
     </footer>
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
 </body>
 </html>

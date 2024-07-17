@@ -56,16 +56,20 @@ dialog form {
     gap: 8px;
 }
 
-.formDiv {
+dialog button {
+    height: 2em;
+}
+
+.formDiv, #formDiv {
     display: flex;
     justify-content: space-between;
 }
 
-.formDiv input {
-    align-self: end;
+#formDiv {
+    margin-top: 8px;
 }
 
-.formDiv button {
+#formDiv button {
     width: 9em;
 }
 

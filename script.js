@@ -14,8 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
         lib.push(newBook);
     }
 
+    addBook("GRR", "TKOR", "176", "read");
+    addBook("GRs", "KOR", "276", "unread");
+
+    console.log(lib);
+
     const dialog = document.getElementById('dialog'); 
-    
     function openForm() {
         dialog.showModal();
     }

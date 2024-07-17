@@ -12,7 +12,7 @@
         <button id="login">Log in</button>
     </header>
     <main>
-        <div id="addDiv"><button id="add" onclick="submit">Add Book</button></div>
+        <div id="addDiv"><button id="add">Add Book</button></div>
         <dialog id="dialog">
             <form>
                 <div class="formDiv">
@@ -28,11 +28,11 @@
                     <input type="text" id="fcount" name="fcount">
                 </div>
                 <button id="freadStatus" class="read">Read</button>
-                <div class="formDiv">
-                    <button id="cancelAdd" onclick="submit">X</button>
-                    <button id="added" onclick="submit">Add</button>
-                </div>
             </form>
+            <div id="formDiv">
+                <button id="cancelAdd">X</button>
+                <button id="added">Add</button>
+            </div>
         </dialog>
         <div id="cardHolder">
             <div class="card">

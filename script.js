@@ -30,11 +30,32 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Attach event listeners for open and close
     document.getElementById('add').addEventListener('click', (event) => {
-        event.preventDefault;
+        event.preventDefault();
         openForm();
-    });
-    document.getElementById('cancelAdd').addEventListener('click', (event) => {
-        event.preventDefault;
-        closeForm();
+
+        document.getElementById('cancelAdd').addEventListener('click', (event) => {
+            event.preventDefault();
+            closeForm();
+        });
+
+        const readStat = document.getElementById('freadStatus');
+        const added = document.getElementById('added');
+
+        readStat.addEventListener('click', (event) => {
+            event.preventDefault();
+            classes = readStat.classList;
+            switch (classes.contains('read')) {
+                case true:
+                    classes.remove('read');
+                    classes.add('unread');
+                    readStat.innerText = 'Unread';
+                    break;
+                case false:
+                    classes.remove('unread');
+                    classes.add('read');
+                    readStat.innerText = 'Read';
+                    break;
+            }
+        })
     });
 });

@@ -98,3 +98,11 @@ footer {
     align-items: center;
     justify-content: center;
 }
+
+.unread {
+    background-color: rgba(255, 73, 73, 0.7);
+}
+
+.read {
+    background-color: rgba(27, 221, 92, 0.7)
+}

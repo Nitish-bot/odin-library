@@ -43,19 +43,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
         readStat.addEventListener('click', (event) => {
             event.preventDefault();
-            classes = readStat.classList;
-            switch (classes.contains('read')) {
-                case true:
-                    classes.remove('read');
-                    classes.add('unread');
+            if (readStat.className === 'read') {
+                    readStat.className = 'unread';
                     readStat.innerText = 'Unread';
-                    break;
-                case false:
-                    classes.remove('unread');
-                    classes.add('read');
-                    readStat.innerText = 'Read';
-                    break;
+            } else {
+                readStat.className = 'read';
+                readStat.innerText = 'Read';
             }
-        })
+        });
+
+        added.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            const fAuthor = document.getElementById('fauthor').value;
+            const fTitle = document.getElementById('ftitle').value;
+            const fPages = document.getElementById('fcount').value;
+            const fReadStat = document.getElementById('freadStatus').class;
+        });
     });
 });

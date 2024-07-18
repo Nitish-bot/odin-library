@@ -22,6 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
         let newBook = new createBook(author, title, pageCount, readStatus);
         lib.push(newBook);
     }
+    
+    // Function for clearing card holder
+    function clear() {
+        cardHolder.innerHTML = '';
+    }
 
     // Declare function for reading from the lib and display
     const cardHolder = document.getElementById('cardHolder')
@@ -29,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function display(book) {
         const card = document.createElement('p');
         card.className = 'card';
+        card.setAttribute('data-id', lib.indexOf(book));
 
         const name = document.createElement('p');
         name.className = 'name';
@@ -60,10 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
         cardHolder.appendChild(card);
     }
 
-    // Function for clearing card holder
-    function clear() {
-        cardHolder.innerHTML = '';
-    }
 
     const dialog = document.getElementById('dialog'); 
     function openForm() {
@@ -118,6 +120,22 @@ document.addEventListener("DOMContentLoaded", () => {
             addBook(fAuthor, fTitle, fPages, fReadStat);
             form.reset();
             closeForm();
+            clear();
+            lib.forEach(display);
+        }
+    });
+
+    // Event listener for remove and toggle
+    cardHolder.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const btn = event.target;
+        if (btn.className === 'read' || btn.className === 'unread') {
+            lib[btn.parentNode.dataset.id].toggle();
+            clear();
+            lib.forEach(display);
+        } else if (btn.className === 'removeBook') {
+            lib.splice(btn.parentNode.dataset.id, 1);
             clear();
             lib.forEach(display);
         }

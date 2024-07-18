@@ -14,18 +14,18 @@
     <main>
         <div id="addDiv"><button id="add">Add Book</button></div>
         <dialog id="dialog">
-            <form>
+            <form id="addForm">
                 <div class="formDiv">
                     <label for="ftitle">Title: </label>
-                    <input type="text" id="ftitle" name="ftitle" required>
+                    <input type="text" id="ftitle" name="ftitle">
                 </div>
                 <div class="formDiv">
                     <label for="fauthor">Author: </label>
-                    <input type="text" id="fauthor" name="fauthor" required>
+                    <input type="text" id="fauthor" name="fauthor">
                 </div>
                 <div class="formDiv">
                     <label for="fcount">Pages: </label>
-                    <input type="text" id="fcount" name="fcount" required>
+                    <input type="text" id="fcount" name="fcount">
                 </div>
                 <button id="freadStatus" class="read">Read</button>
             </form>
@@ -39,7 +39,7 @@
                 <p class="name">Title: <span>The Hobbit</span></p>
                 <p class="author">Author: <span>GRR Martin</span></p>
                 <p class="pageCount">Pages: <span>176 Pages</span></p>
-                <button class="readStatus read">Read</button>
+                <button id="readStatus" class="read">Read</button>
                 <button class="removeBook">Remove</button>
             </div>
             <div class="card">

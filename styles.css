@@ -90,7 +90,7 @@ dialog button {
     gap: 12px;
 }
 
-.readStatus, .removeBook {
+#readStatus, .removeBook {
     height: 32px;
 }
 

@@ -10,6 +10,14 @@ document.addEventListener("DOMContentLoaded", () => {
         this.readStatus = readStatus
     }
     
+    const parent = {
+        toggle() {
+            this.readStatus = this.readStatus === 'read' ? 'unread' : 'read';
+        }
+    }
+
+    Object.setPrototypeOf(createBook.prototype, parent);
+
     function addBook(author, title, pageCount, readStatus) {
         let newBook = new createBook(author, title, pageCount, readStatus);
         lib.push(newBook);
@@ -91,12 +99,10 @@ document.addEventListener("DOMContentLoaded", () => {
             readStat.innerText = 'Read';
         }
     });
-
+    
     added.addEventListener('click', (event) => {
         event.preventDefault();
         event.stopPropagation();
-
-        console.log(lib);
         const fAuthor = document.getElementById('fauthor').value;
         const fTitle = document.getElementById('ftitle').value;
         const fPages = document.getElementById('fcount').value;

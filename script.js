@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function display(book) {
         const cardHolder = document.getElementById('cardHolder')
         const card = document.createElement('p');
-        p.className = 'card';
+        card.className = 'card';
 
         const name = document.createElement('p');
         name.className = 'name';
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const pageCount = document.createElement('p');
         pageCount.className = 'pageCount';
-        author.innerHTML = `${book.pageCount} pages`;
+        pageCount.innerHTML = `${book.pageCount} pages`;
 
         const readStat = document.createElement('button');
         readStat.className = `readStatus ${book.readStatus}`;
@@ -49,11 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         cardHolder.appendChild(card);
     }
-
-    // Sample additions
-    addBook("GRR", "TKOR", "176", "read");
-    addBook("GRs", "KOR", "276", "unread");
-    // 
 
     const dialog = document.getElementById('dialog'); 
     function openForm() {
@@ -98,12 +93,13 @@ document.addEventListener("DOMContentLoaded", () => {
             const fPages = document.getElementById('fcount').value;
             const fReadStat = document.getElementById('freadStatus').className;
 
-            if (isNaN(fReadStat) || fAuthor === "" || fTitle === "" ||
+            if (isNaN(fPages) || fAuthor === "" || fTitle === "" ||
                 fPages === "") {
                 alert('Please fill the details in the correct format!');
             }
             else {
                 addBook(fAuthor, fTitle, fPages, fReadStat);
+                lib.forEach(display);
             }
         });
     });

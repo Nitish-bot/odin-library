@@ -1,16 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
     // Constructor lib and add function declarations
     const lib = [];
-
-    class createBook extends parent {
-        constructor(author, title, pageCount, readStatus) {
-            this.author = author,
-            this.title = title,
-            this.pageCount = pageCount,
-            this.readStatus = readStatus
-        }
-    }
     
     class parent {
         toggle() {
@@ -18,8 +8,34 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    class createBook extends parent {
+        constructor(author, title, pageCount, readStatus) {
+            super();
+            this._author = author,
+            this._title = title,
+            this._pageCount = pageCount,
+            this._readStatus = readStatus
+        }
+
+        get author() {
+            return this._author;
+        }
+        get title() {
+            return this._title;
+        }
+        get pageCount() {
+            return this._pageCount;
+        }
+        get readStatus() {
+            return this._readStatus;
+        }
+        set readStatus(stat) {
+            this._readStatus = stat;
+        }
+    }
+
     function addBook(author, title, pageCount, readStatus) {
-        let newBook = new createBook(author, title, pageCount, readStatus);
+        const newBook = new createBook(author, title, pageCount, readStatus);
         lib.push(newBook);
     }
     

@@ -3,20 +3,20 @@ document.addEventListener("DOMContentLoaded", () => {
     // Constructor lib and add function declarations
     const lib = [];
 
-    function createBook(author, title, pageCount, readStatus) {
-        this.author = author,
-        this.title = title,
-        this.pageCount = pageCount,
-        this.readStatus = readStatus
+    class createBook extends parent {
+        constructor(author, title, pageCount, readStatus) {
+            this.author = author,
+            this.title = title,
+            this.pageCount = pageCount,
+            this.readStatus = readStatus
+        }
     }
     
-    const parent = {
+    class parent {
         toggle() {
             this.readStatus = this.readStatus === 'read' ? 'unread' : 'read';
         }
     }
-
-    Object.setPrototypeOf(createBook.prototype, parent);
 
     function addBook(author, title, pageCount, readStatus) {
         let newBook = new createBook(author, title, pageCount, readStatus);
